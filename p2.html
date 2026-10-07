@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COURSE｜おすすめの焼肉 恵比寿うしみつ</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --accent-gold: #d4af37;
+            --text-light: #f5f5f5;
+            --text-muted: #b0b0b0;
+            --border-color: #333333;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Heiti TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background: linear-gradient(180deg, #000000 0%, var(--bg-color) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            color: var(--accent-gold);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+
+        /* 交通指引樣式 */
+        .access-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .access-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .step-badge {
+            background-color: var(--accent-gold);
+            color: #000;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        /* 套餐列表樣式 */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .course-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+        }
+
+        .course-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .course-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .course-badge {
+            display: inline-block;
+            background-color: #333;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            align-self: flex-start;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .course-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            line-height: 1.4;
+        }
+
+        .course-price {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .course-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin-bottom: 15px;
+        }
+
+        .course-highlights {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 10px 12px;
+            border-radius: 5px;
+            font-size: 0.88rem;
+        }
+
+        .course-highlights strong {
+            color: var(--text-light);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>恵比寿 うしみつ</h1>
+        <p>COURSE｜おすすめの焼肉 恵比寿うしみつ</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- 東京車站地下鐵交通指引 -->
+        <section class="access-card">
+            <h2 class="section-title">交通指引：從東京車站出發（地下鐵）</h2>
+            <div class="access-steps">
+                <div class="step-item">
+                    <span class="step-badge">步驟 1</span>
+                    <div class="step-content">
+                        <strong>搭乘地下鐵丸之內線：</strong>
+                        從「東京車站（M17）」搭乘東京地下鐵丸之內線（荻窪方向），搭乘 1 站至「銀座站（M16）」。
+                    </div>
+                </div>
+                <div class="step-item">
+                    <span class="step-badge">步驟 2</span>
+                    <div class="step-content">
+                        <strong>轉乘日比谷線：</strong>
+                        於「銀座站（H09）」站內轉乘東京地下鐵日比谷線（中目黑方向），搭乘 7 站至「惠比壽站（H02）」。
+                    </div>
+                </div>
+                <div class="step-item">
+                    <span class="step-badge">步驟 3</span>
+                    <div class="step-content">
+                        <strong>徒步前往店家：</strong>
+                        從惠比壽站 2 號出口出站後，步行約 3 分鐘即可抵達餐廳。
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-muted);">
+                * 地址：東京都渋谷区恵比寿南3-1-8 GRAN EBISU 1F<br>
+                * 電話：03-6303-2958
+            </p>
+        </section>
+
+        <!-- 精選套餐介紹 -->
+        <h2 class="section-title">主廚推薦套餐（共五款）</h2>
+        
+        <div class="course-grid">
+
+            <!-- 套餐 1 -->
+            <div class="course-card">
+                <img class="course-img" src="https://image.hitosara.com/gg/image/0006086620/0006086620E1_750x562s.jpg" alt="新宿うしみつ開店記念コース">
+                <div class="course-content">
+                    <span class="course-badge">個室確約</span>
+                    <h3 class="course-name">【新宿うしみつ開店記念コース】</h3>
+                    <div class="course-price">9,680 日圓 <span style="font-size: 0.8rem; color: #888;">(含稅/服務費)</span></div>
+                    <div class="course-desc">
+                        為紀念新宿店開幕特別推出的特別套餐。融合了高級海鮮與頂級和牛，並以精緻視覺表現的創意燒肉饗宴。
+                    </div>
+                    <div class="course-highlights">
+                        <strong>餐點特色：</strong>和牛蟹肉鮭魚卵陸陸生肉熱狗、夏季派皮卡比生肉生肉塔、炸肉餅三明治（自家製醬汁）、白色凍結冷麵。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 套餐 2 -->
+            <div class="course-card">
+                <img class="course-img" src="https://image.hitosara.com/gg/image/0006086620/0006086620E2_750x562s.jpg" alt="銀座ちかみつ焼肉百名店2025受賞記念コース">
+                <div class="course-content">
+                    <span class="course-badge">個室確約</span>
+                    <h3 class="course-name">【姊妹店 銀座ちかみつ 燒肉百名店2025獲獎紀念套餐】</h3>
+                    <div class="course-price">13,310 日圓 <span style="font-size: 0.8rem; color: #888;">(含稅/服務費)</span></div>
+                    <div class="course-desc">
+                        歡慶姊妹店榮獲 2025 燒肉百名店的慶祝套餐。精選 7 種特選燒肉品項，結合招牌生肉與創意冷麵，一次品嚐經典菜色。
+                    </div>
+                    <div class="course-highlights">
+                        <strong>餐點特色：</strong>嚴選和牛鮭魚生肉熱狗、炸肉餅三明治、白色凍結冷麵及 7 款嚴選燒烤肉品。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 套餐 3 -->
+            <div class="course-card">
+                <img class="course-img" src="https://image.hitosara.com/gg/image/0006086620/0006086620E3_750x562s.jpg" alt="至極のタン・ハラミコース">
+                <div class="course-content">
+                    <span class="course-badge">個室確約</span>
+                    <h3 class="course-name">【至極のタン・ハラミコース】</h3>
+                    <div class="course-price">15,400 日圓 <span style="font-size: 0.8rem; color: #888;">(含稅/服務費)</span></div>
+                    <div class="course-desc">
+                        料理長傾力打造，專為「牛舌」與「橫膈膜」愛好者設計的極致套餐。包含多道僅在此套餐才能享用到的專屬料理。
+                    </div>
+                    <div class="course-highlights">
+                        <strong>餐點特色：</strong>限定牛舌與橫膈膜專屬料理、極致精選燒肉系列。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 套餐 4 -->
+            <div class="course-card">
+                <img class="course-img" src="https://image.hitosara.com/gg/image/0006086620/0006086620E4_750x562s.jpg" alt="新【恵比寿うしみつ極コース】">
+                <div class="course-content">
+                    <span class="course-badge">個室確約</span>
+                    <h3 class="course-name">新【恵比寿うしみつ極コース】</h3>
+                    <div class="course-price">19,360 日圓 <span style="font-size: 0.8rem; color: #888;">(含稅/服務費)</span></div>
+                    <div class="course-desc">
+                        匯集「恵比寿うしみつ」所有招牌主打（Specialité）的旗艦套餐。奢華地結合海膽、菲力肉排與煙燻風味。
+                    </div>
+                    <div class="course-highlights">
+                        <strong>餐點特色：</strong>嚴選和牛海膽生肉熱狗、嚴選菲力牛排布里歐炸肉三明治、嚴選煙燻橫膈膜、白色凍結冷麵。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 套餐 5 -->
+            <div class="course-card">
+                <img class="course-img" src="https://image.hitosara.com/gg/image/0006086620/0006086620E5_750x562s.jpg" alt="恵比寿うしみつ premiumコース">
+                <div class="course-content">
+                    <span class="course-badge">個室確約</span>
+                    <h3 class="course-name">【恵比寿うしみつ premiumコース】</h3>
+                    <div class="course-price">25,410 日圓 <span style="font-size: 0.8rem; color: #888;">(含稅/服務費)</span></div>
+                    <div class="course-desc">
+                        尊榮頂級套餐，提供桌面桌邊專人桌邊料理體驗，搭配土鍋炊飯等奢華饗宴，適合重要慶祝與宴客。
+                    </div>
+                    <div class="course-highlights">
+                        <strong>餐點特色：</strong>和牛海膽生肉熱狗（桌邊現場製作）、嚴選菲力牛排布里歐炸肉三明治、嚴選和牛菲力與紐約客土鍋高湯茶泡飯（櫃まぶし）。
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        Copyright &copy; 恵比寿 うしみつ All Rights Reserved.
+    </footer>
+
+</body>
+</html>
